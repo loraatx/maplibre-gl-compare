@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Austin Compare Example</title>
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+    <link
+      href="https://unpkg.com/maplibre-gl@2.1.6/dist/maplibre-gl.css"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/maplibre-gl@2.1.6/dist/maplibre-gl.js"></script>
+    <link href="../dist/maplibre-gl-compare.css" rel="stylesheet" />
+    <script src="../dist/maplibre-gl-compare.js"></script>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+      }
+      .map {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="comparison-container">
+      <div id="before" class="map"></div>
+      <div id="after" class="map"></div>
+    </div>
+    <script>
+      const austin = [-97.7431, 30.2672];
+      const beforeMap = new maplibregl.Map({
+        container: 'before',
+        style: 'https://demotiles.maplibre.org/style.json',
+        center: austin,
+        zoom: 12
+      });
+
+      const afterMap = new maplibregl.Map({
+        container: 'after',
+        style: 'https://demotiles.maplibre.org/style.json',
+        center: austin,
+        zoom: 12
+      });
+
+      new maplibregl.Compare(beforeMap, afterMap, '#comparison-container', {
+        orientation: 'vertical',
+        mousemove: false
+      });
+    </script>
+  </body>
+</html>

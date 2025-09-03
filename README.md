@@ -6,6 +6,10 @@ Swipe and sync between two MapLibre maps. This plugin was originally developed f
 
 ### Examples
 
+#### Austin, Texas
+
+[Interactive example showing Austin](example/austin.html)
+
 #### Full Example without the need of a token
 
 ```js
