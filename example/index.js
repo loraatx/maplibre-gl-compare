@@ -2,17 +2,16 @@
 
 require("../");
 
-// 'Before' style from https://github.com/lukasmartinelli/naturalearthtiles
+// Both sides use the same OpenFreeMap style
 var before = new maplibregl.Map({
   container: "before",
-  style: "https://raw.githubusercontent.com/lukasmartinelli/naturalearthtiles/gh-pages/maps/natural_earth.vector.json",
+  style: "https://tiles.openfreemap.org/styles/liberty",
   zoom: 2
 });
 
-// 'After' style from https://github.com/maplibre/demotiles
 var after = new maplibregl.Map({
   container: "after",
-  style: "https://demotiles.maplibre.org/style.json",
+  style: "https://tiles.openfreemap.org/styles/liberty",
   zoom: 2
 });
 
